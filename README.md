@@ -7,7 +7,7 @@ This project for the Microsoft Fabric and AI Learning Hackathon.
 Safety Sphere is a cloud-native safety solution developed in Microsoft Fabric. It integrates data from mobile apps and smart watches for continuous monitoring and analytics. The system features geofencing alerts that use geospatial data to define safe and unsafe zones, triggering notifications if a family member exits or enters these areas.
 The solution centralizes streaming data, processes real-time events, and sets up automated alerts through the Data Activator. This architecture ensures detailed visualization, enabling users to quickly detect potential safety threats and respond promptly, ensuring comprehensive protection for family members.
 
-**Link to demo: ** 
+**Link to demo:** 
 https://youtu.be/AsF6POFgGR0?si=wdJKqPLBrNBVxXUt
 
 **Our Inspiration** :
