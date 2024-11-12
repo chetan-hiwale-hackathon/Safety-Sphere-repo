@@ -1,0 +1,66 @@
+.create table zone (
+    zone_id : int,
+    zone_type : string,
+    zone_title : string,
+    zone_latitude : real,
+    zone_longitude : real,
+    zone_radius : int,
+    zone_created_at : datetime,
+    zone_expires_at : datetime,
+    zone_unsafe_score : real
+)
+
+.drop table zone;
+
+.create table user (
+    user_id : int,
+    user_name : string,
+    user_age : int,
+    user_gender : string,
+    user_email_address : string,
+    user_phone_number : string,
+    user_family_id : int
+)
+
+.create table family (
+    family_id : int, 
+    family_safe_zone_id : int,
+    family_name : string,
+    family_created_at : datetime
+)
+
+.create table alerts (
+    alert_id : int, 
+    alert_type : string,
+    alert_name : string,
+    alert_description : string
+)
+
+.create table alerts_logs (
+    alert_id : int,
+    user_id : int,
+    alert_message : string,
+    alert_send_at : datetime 
+)
+
+
+.create table panic_logs (
+    session_id : int,
+    stream_id : int,
+    user_id : int,
+    panic_latitude : real,
+    panic_longitude : real,
+    timeStamp : datetime
+)
+
+.alter-merge table live_streaming policy update
+```
+[   
+    {
+        "IsEnabled": true,
+        "Source": "input",
+        "Query": "input | where user_is_panic == 1 ",
+        "IsTransactional": true,
+        "PropagateIngestionProperties": false
+    }
+]
