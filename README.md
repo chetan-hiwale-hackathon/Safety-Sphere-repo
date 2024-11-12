@@ -7,6 +7,9 @@ This project for the Microsoft Fabric and AI Learning Hackathon.
 Safety Sphere is a cloud-native safety solution developed in Microsoft Fabric. It integrates data from mobile apps and smart watches for continuous monitoring and analytics. The system features geofencing alerts that use geospatial data to define safe and unsafe zones, triggering notifications if a family member exits or enters these areas.
 The solution centralizes streaming data, processes real-time events, and sets up automated alerts through the Data Activator. This architecture ensures detailed visualization, enabling users to quickly detect potential safety threats and respond promptly, ensuring comprehensive protection for family members.
 
+**Link to demo: ** 
+https://youtu.be/AsF6POFgGR0?si=wdJKqPLBrNBVxXUt
+
 **Our Inspiration** :
 
 We were inspired by the **stories and reports often heard on social media**. One of the incidents involved a person walking home from work, feeling uneasy as he noticed the streets becoming increasingly deserted. The **stories of harassment and violence against women and children** that we had read about and heard from friends echoed in your mind. This incident made me realize the importance of staying in touch and ensuring your safety, inspiring me to take proactive steps to improve our family’s communication and safety measures.
@@ -17,7 +20,8 @@ One of the major challenges we faced was writing **efficient KQL queries** was a
 
 **Architecture overview:**
 
-![image](https://github.com/user-attachments/assets/8b525841-270b-4ae6-b66b-585547e17579)
+![image](https://github.com/user-attachments/assets/8e6df12b-4ab3-4893-902d-7d807d0b152e)
+
 
  
 1.	Data source: Real-time data is from smart phones, containing both location and health-related information in JSON format. 
@@ -41,20 +45,22 @@ One of the major challenges we faced was writing **efficient KQL queries** was a
 **Steps to setup the workspace**
 
 **1. Create Microsoft Fabric Workspace:**
-![image](https://github.com/user-attachments/assets/68878550-1343-4b2a-b24b-89f4ab5ce223)
+![image](https://github.com/user-attachments/assets/524c85e7-cc59-45ab-895c-489d39aee0b1)
+
  
 
 **2. Create Event House** : 
 - After creating Event House, a default KQL Database will be created. Rename the KQL database to a suitable name.
 - Similarly, we can create Lakehouse and Data activator.
 
- ![image](https://github.com/user-attachments/assets/11c32ede-8af6-4084-975a-68460a82e16c)
+![image](https://github.com/user-attachments/assets/6c05c280-e168-47f1-929e-29c310de3319)
+
 
 
 **3. Setup the event stream:**
 - Create a event stream and set source as custom endpoint and copy the EventHub name and connection string details. 
 - After setting the source, select Lakehouse as destination from “Add destination” tab and fill the required parameters. Similarly add for KQL DB and Data activator.
-![image](https://github.com/user-attachments/assets/f998946c-a010-472b-8df0-aeb27912b926)
+![image](https://github.com/user-attachments/assets/d0da73be-df44-419e-be9e-68d451d377c6)
 
  
 **4. Create a notebook:**
@@ -62,21 +68,23 @@ One of the major challenges we faced was writing **efficient KQL queries** was a
 - Insert data streamer notebook code and change the event-hub name and event hub connection string and run all the cells to start streaming data to eventstream. 
 - Upload the dataset.parquet inside the lakehouse.
 - This will stream data to event hub in event stream. Event stream will ensure to stream the data in Lakehouse, KQL database and Reflex.  
- ![image](https://github.com/user-attachments/assets/8dfc2218-bc57-475e-86a9-b426724ddb08)
+![image](https://github.com/user-attachments/assets/248b8c0c-e64b-4d3b-9638-c6086128e6db)
 
 
 
 **5. Setup the update policy** 
 - Create a Query set and insert the update policy and tables queries and run them.
- ![image](https://github.com/user-attachments/assets/d045bbe7-0daf-4a7f-b917-0b023190e878)
+![image](https://github.com/user-attachments/assets/e52922bb-d8a9-4170-acdb-3142d4de2cb2)
+
 
 
 **6. Create Real time dashboard:**
-- Create Real time dashboard. Go to manage section and click on replace the file with dashboard.json file. 
- ![image](https://github.com/user-attachments/assets/d46d2837-95f5-42a9-a72e-58f468a4f308)
+- Create Real time dashboard. Go to manage section and click on replace the file with dashboard.json file.
+![image](https://github.com/user-attachments/assets/1cbf08dd-a427-419c-bcc6-de0ad66a89d3)
+
 
 - After replacing the file, the dashboard should look like this.
-![image](https://github.com/user-attachments/assets/0e10e932-90b4-4e3d-b519-05194933359b)
+![image](https://github.com/user-attachments/assets/777e29e4-a114-4041-82be-2a4730b6efc1)
 
  
 **7. Create Alerts** 
