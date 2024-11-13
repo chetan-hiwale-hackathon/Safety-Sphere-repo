@@ -8,7 +8,7 @@ Safety Sphere is a cloud-native safety solution developed in Microsoft Fabric. I
 The solution centralizes streaming data, processes real-time events, and sets up automated alerts through the Data Activator. This architecture ensures detailed visualization, enabling users to quickly detect potential safety threats and respond promptly, ensuring comprehensive protection for family members.
 
 **Link to demo:** 
-https://youtu.be/AsF6POFgGR0?si=wdJKqPLBrNBVxXUt
+https://youtu.be/A1b5cVOips0?si=rG82Qdl7voPcW1ww
 
 **Our Inspiration** :
 
